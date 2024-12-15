@@ -18,8 +18,8 @@ int main()
 
 		try
 		{
-			ArchiveType type = archive_manager.GetType(std::move(archive_type));
-			archive_manager.Pack(std::move(file_name), std::move(type));
+			ArchiveType type = archive_manager.GetType(std::forward<std::string&&>(archive_type));
+			archive_manager.Pack(std::forward<std::string&&>(file_name), std::forward<ArchiveType&&>(type));
 		}
 		catch (const std::invalid_argument& ex)
 		{
