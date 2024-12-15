@@ -9,10 +9,10 @@ class ArchiveManager
 public:
 	ArchiveManager();
 
-	void Pack(const std::string& file_name, ArchiveType type);
+	void Pack(std::string&& file_name, ArchiveType&& type);
 
-	ArchiveType GetType(const std::string& type);
+	ArchiveType GetType(std::string&& type);
 
 private:
-	std::vector<std::unique_ptr<Archive>> m_Archives;
+	std::vector<std::unique_ptr<Archive>> m_Archives{};
 };

@@ -10,7 +10,7 @@ Tar::~Tar()
 {
 }
 
-void Tar::Pack(const std::string& file_name)
+void Tar::Pack(std::string&& file_name)
 {
 	std::cout << "Pack file: " << file_name << " with " << GetTypeStr() << std::endl;
 }

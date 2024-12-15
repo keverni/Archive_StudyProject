@@ -1,6 +1,6 @@
 #include "Archive.h"
 
-Archive::Archive(ArchiveType type) :
+Archive::Archive(ArchiveType&& type) :
 	m_Type(type)
 {
 }
@@ -9,12 +9,12 @@ Archive::~Archive()
 {
 }
 
-ArchiveType Archive::GetType() const
+ArchiveType Archive::GetType() const noexcept
 {
 	return m_Type;
 }
 
-std::string Archive::GetTypeStr() const
+std::string Archive::GetTypeStr() const noexcept
 {
 	if (m_Type == ArchiveType::Rar)
 	{

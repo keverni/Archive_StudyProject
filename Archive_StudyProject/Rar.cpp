@@ -10,7 +10,7 @@ Rar::~Rar()
 {
 }
 
-void Rar::Pack(const std::string& file_name)
+void Rar::Pack(std::string&& file_name)
 {
 	std::cout << "Pack file: " << file_name <<  " with " << GetTypeStr() << std::endl;
 }

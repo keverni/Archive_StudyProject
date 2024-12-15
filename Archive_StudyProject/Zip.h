@@ -8,6 +8,6 @@ public:
 	Zip();
 	virtual ~Zip();
 
-	virtual void Pack(const std::string& file_name);
+	virtual void Pack(std::string&& file_name) override;
 };
 
