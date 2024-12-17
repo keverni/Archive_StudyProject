@@ -12,13 +12,13 @@ enum class ArchiveType
 class Archive
 {
 public:
-	explicit Archive(ArchiveType&& type);
-	virtual ~Archive();
+	explicit Archive(ArchiveType type);
+	virtual ~Archive() noexcept = default;
 
 	ArchiveType GetType() const noexcept;
 	std::string GetTypeStr() const noexcept;
 
-	virtual void Pack(std::string&& file_name) = 0;
+	virtual void Pack(const std::string&& file_name) = 0;
 
 private:
 	ArchiveType m_Type{};

@@ -12,19 +12,19 @@ ArchiveManager::ArchiveManager()
 	m_Archives.emplace_back(std::make_unique<Tar>());
 }
 
-void ArchiveManager::Pack(std::string&& file_name, ArchiveType&& type)
+void ArchiveManager::Pack(const std::string&& file_name, ArchiveType type)
 {
 	for (const auto& arch : m_Archives)
 	{
 		if (arch->GetType() == type)
 		{
-			arch->Pack(std::forward<std::string&&>(file_name));
+			arch->Pack(std::forward<const std::string&&>(file_name));
 			break;
 		}
 	}
 }
 
-ArchiveType ArchiveManager::GetType(std::string&& type)
+ArchiveType ArchiveManager::GetType(const std::string&& type)
 {
 	if (type == "Rar")
 	{

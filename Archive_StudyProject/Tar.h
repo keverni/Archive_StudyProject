@@ -6,8 +6,8 @@ class Tar : public Archive
 {
 public:
 	Tar();
-	virtual ~Tar();
+	virtual ~Tar() noexcept = default;
 
-	virtual void Pack(std::string&& file_name) override;
+	virtual void Pack(const std::string&& file_name) override;
 };
 

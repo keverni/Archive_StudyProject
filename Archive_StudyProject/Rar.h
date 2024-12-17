@@ -6,8 +6,8 @@ class Rar : public Archive
 {
 public:
 	Rar();
-	virtual ~Rar();
+	virtual ~Rar() noexcept = default;
 	
-	virtual void Pack(std::string&& file_name) override;
+	virtual void Pack(const std::string&& file_name) override;
 };
 

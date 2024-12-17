@@ -1,11 +1,7 @@
 #include "Archive.h"
 
-Archive::Archive(ArchiveType&& type) :
+Archive::Archive(ArchiveType type) :
 	m_Type(type)
-{
-}
-
-Archive::~Archive()
 {
 }
 

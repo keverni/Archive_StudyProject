@@ -6,11 +6,7 @@ Zip::Zip() :
 {
 }
 
-Zip::~Zip()
-{
-}
-
-void Zip::Pack(std::string&& file_name)
+void Zip::Pack(const std::string&& file_name)
 {
 	std::cout << "Pack file: " << file_name << " with " << GetTypeStr() << std::endl;
 }
