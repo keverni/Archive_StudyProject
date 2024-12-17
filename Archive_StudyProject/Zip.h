@@ -6,7 +6,7 @@ class Zip : public Archive
 {
 public:
 	Zip();
-	virtual ~Zip() noexcept = default;
+	virtual ~Zip() noexcept override = default;
 
 	virtual void Pack(const std::string&& file_name) override;
 };
